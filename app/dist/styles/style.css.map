@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "ACEA,AAAA,CAAC;AACD,CAAC,AAAA,OAAO;AACR,CAAC,AAAA,MAAM,CAAC;EACN,UAAU,EAAE,UAAU;CACvB;;AAED,AAAA,IAAI,EAAE,IAAI,CAAC;EACP,WAAW,ECRJ,SAAS,EAAE,UAAU;CDS/B",
+    "sources": [
+        "style.scss",
+        "abstract/_base.scss",
+        "abstract/_variables.scss",
+        "components/_pokeGrid.scss",
+        "abstract/_variables.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
