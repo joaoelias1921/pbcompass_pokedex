@@ -1,6 +1,54 @@
-function fetchPokemon() {
+function sendFetchAmount() {
+    const input = document.querySelector("#pokemonAmount") as HTMLInputElement;
+    const errorMsg = document.querySelector("#error-message")!;
+    const displayTitle = document.querySelector("#amountDisplay")!;
+    let valid = true;
+    let inputArray = input.value.split("");
+    let regex = /[\!\@\#\$\%\^\&\*\)\(\+\=\.\<\>\{\}\[\]\:\;\'\"\|\~\`\_\-]/g
+
+    if(!input.value) {
+        valid = false;
+        errorMsg.innerHTML = "Please input a valid number!";
+        input.style.border = "2px solid red";
+        return;
+    }
+
+    if(regex.test(input.value)){
+        valid = false;
+        errorMsg.innerHTML = "Please input numbers only!";
+        input.style.border = "2px solid red";
+        return;
+    }
+
+    if(parseInt(input.value) > 898) {
+        valid = false;
+        errorMsg.innerHTML = "The maximum amount of Pokemon is 898!";
+        input.style.border = "2px solid red";
+    }else if(parseInt(input.value) <= 0){
+        valid = false;
+        errorMsg.innerHTML = "The minimum amount of Pokemon is 1!";
+        input.style.border = "2px solid red";
+        return;
+    }
+
+    if(inputArray.length > 3){
+        do{
+            inputArray.pop();
+        }while(inputArray.length > 3);
+        input.value = inputArray.join("");
+    }
+
+    if(valid) {
+        fetchPokemon(parseInt(input.value));
+        input.style.border = "none";
+        errorMsg.innerHTML = "";
+        displayTitle.innerHTML = `Displaying 1 - ${input.value}`;
+    }
+}
+
+function fetchPokemon(pokemonAmount: number) {
     const promises = [];
-    for(let i = 1; i<= 150; i++) {
+    for(let i = 1; i<= pokemonAmount; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then(res => res.json()));
     }
@@ -9,7 +57,7 @@ function fetchPokemon() {
     });
 }
 
-fetchPokemon();
+fetchPokemon(150);
 
 function convertPokemonData(results: any[]) {
     const allPokemon = results.map(data => ({

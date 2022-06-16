@@ -30,6 +30,15 @@
         <section class="pokemon-list">
             <div class="pokemon-container">
                 <h1>Pokedéx</h1>
+                <div class="filter-container">
+                    <h2>How many Pokemon you want to see? (Up to 898!)</h2>
+                    <span id="error-message"></span>
+                    <div class="filter-number">
+                        <input type="number" id="pokemonAmount" placeholder="Type here..." data-mask="000" data-mask-selectonfocus="true">
+                        <button onclick="sendFetchAmount()">Go!</button>
+                    </div>
+                    <h3 id="amountDisplay">Displaying 1 - 150</h2>
+                </div>
                 <ol id="pokedex"></ol>
             </div>
         </section>
