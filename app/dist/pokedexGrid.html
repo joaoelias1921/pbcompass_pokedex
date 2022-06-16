@@ -15,9 +15,25 @@
     <header>
         <section class="top-container">
             <nav class="top-navbar">
-                <img src="./images/pokedex-logo.png" alt="Pokedéx Logo">
+                <a href="./index.html"><img src="./images/pokedex-logo.png" alt="Pokedéx Logo"></a>
+                <input type="search" id="search-bar" placeholder="Search a Pokemon">
+                <ul class="header-links">
+                    <a href="./index.html"><li>Home</li></a>
+                    <a href="#"><li>About</li></a>
+                    <a href="#"><li>Need Help?</li></a>
+                    <a href="#"><li>FAQ</li></a>
+                </ul>
             </nav>
         </section>
     </header>
+    <main>
+        <section class="pokemon-list">
+            <div class="pokemon-container">
+                <h1>Pokedéx</h1>
+                <ol id="pokedex"></ol>
+            </div>
+        </section>
+    </main>
+    <script src="./js/app.js"></script>
 </body>
 </html>
