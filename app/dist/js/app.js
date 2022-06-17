@@ -1,47 +1,56 @@
 "use strict";
+// sets error message for the Pokemon amount input
+function setError(input, message) {
+    const errorMsg = document.querySelector("#error-message");
+    errorMsg.innerHTML = message;
+    input.style.border = "2px solid red";
+}
+// validates the value in the input and fetchs Pokemon if everything is OK
 function sendFetchAmount() {
     const input = document.querySelector("#pokemonAmount");
-    const errorMsg = document.querySelector("#error-message");
     const displayTitle = document.querySelector("#amountDisplay");
     let valid = true;
     let inputArray = input.value.split("");
     let regex = /[\!\@\#\$\%\^\&\*\)\(\+\=\.\<\>\{\}\[\]\:\;\'\"\|\~\`\_\-]/g;
+    // empty input validation
     if (!input.value) {
         valid = false;
-        errorMsg.innerHTML = "Please input a valid number!";
-        input.style.border = "2px solid red";
+        setError(input, "Please input a valid number!");
         return;
     }
+    // special characters validation
     if (regex.test(input.value)) {
         valid = false;
-        errorMsg.innerHTML = "Please input numbers only!";
-        input.style.border = "2px solid red";
+        setError(input, "Please input numbers only!");
         return;
     }
+    // max and min values validation
     if (parseInt(input.value) > 898) {
         valid = false;
-        errorMsg.innerHTML = "The maximum amount of Pokemon is 898!";
-        input.style.border = "2px solid red";
+        setError(input, "The maximum amount of Pokemon is 898!");
     }
     else if (parseInt(input.value) <= 0) {
         valid = false;
-        errorMsg.innerHTML = "The minimum amount of Pokemon is 1!";
-        input.style.border = "2px solid red";
+        setError(input, "The minimum amount of Pokemon is 1!");
         return;
     }
+    // for numbers bigger than 999, this removes every digit until only 3 are left,
+    // not forcing the user to type everything again in case of a typo
     if (inputArray.length > 3) {
         do {
             inputArray.pop();
         } while (inputArray.length > 3);
         input.value = inputArray.join("");
     }
+    // if everything is OK, errors are removed and the Pokemon are fetched
     if (valid) {
         fetchPokemon(parseInt(input.value));
         input.style.border = "none";
-        errorMsg.innerHTML = "";
+        document.querySelector("#error-message").innerHTML = "";
         displayTitle.innerHTML = `Displaying 1 - ${input.value}`;
     }
 }
+// fetch the data from PokeAPI
 function fetchPokemon(pokemonAmount) {
     const promises = [];
     for (let i = 1; i <= pokemonAmount; i++) {
@@ -52,7 +61,9 @@ function fetchPokemon(pokemonAmount) {
         convertPokemonData(results);
     });
 }
+// default amount of Pokemon displayed whenever the window is reloaded
 fetchPokemon(150);
+// maps the data and converts it into objects that can be shown by JS
 function convertPokemonData(results) {
     const allPokemon = results.map(data => ({
         name: data.name,
@@ -62,6 +73,7 @@ function convertPokemonData(results) {
     }));
     displayPokemon(allPokemon);
 }
+// effectively displays data on the page, inserting it into the ordenated list
 function displayPokemon(allPokemon) {
     const pokedexList = document.getElementById("pokedex");
     const pokemonHTMLString = allPokemon

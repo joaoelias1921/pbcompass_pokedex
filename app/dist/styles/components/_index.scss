@@ -1,0 +1,91 @@
+@import '../abstract/variables';
+
+.index-content {
+    @include centered();
+    flex-direction: row;
+    justify-content: space-between;
+    .navigation-section {
+        @include centered();
+        background-color: #252525;
+        width: 20%;
+        height: 100vh;
+        .info-navigation {
+            @include centered();
+            flex-direction: column;
+            width: 100%;
+            .info-btn {
+                padding: 20px;
+                width: 65%;
+                font-family: $mainFont;
+                background-color: #303030;
+                font-size: $textFontSize*1.2;
+                color: white;
+                outline: none;
+                border-radius: 10px;
+                border: 1px solid white;
+                margin: 15% auto;
+                cursor: pointer;
+                transition: 360ms ease-in-out;
+                &:hover {
+                    background-color: white;
+                    color: black;
+                    animation: bounce 0.5s linear;
+                }
+            }
+            .selected-btn {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+
+    .info-section {
+        @include centered();
+        background-color: #ffe0e0;
+        width: 80%;
+        height: 100vh;
+        .info-container {
+            @include centered();
+            width: 100%;
+            .info {
+                @include centered();
+                width: 90%;
+                background-color: white;
+                border-radius: 10px;
+                h1 {
+                    width: 90%;
+                    text-align: left;
+                    padding: 20px;
+                    font-size: $titleFontSize*0.8;
+                    margin-bottom: 2%;
+                    border-bottom: 2px solid $primaryColor;
+                }
+                img {
+                    width: 300px;
+                    margin-bottom: 5%;
+                }
+                p {
+                    width: 95%;
+                    padding: 20px;
+                    text-align: justify;
+                }
+            }
+            .next-btn {
+                width: 90%;
+                background-color: $primaryColor;
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 1%;
+                color: white;
+                font-family: $mainFont;
+                transition: 160ms ease-in-out;
+                cursor: pointer;
+                &:hover {
+                    background-color: $primaryColor*0.8;
+                }
+            }
+        }
+    }
+}

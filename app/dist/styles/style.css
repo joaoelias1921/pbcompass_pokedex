@@ -47,6 +47,192 @@ html, body {
   }
 }
 
+.index-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.index-content .navigation-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #252525;
+  width: 20%;
+  height: 100vh;
+}
+
+.index-content .navigation-section .info-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.index-content .navigation-section .info-navigation .info-btn {
+  padding: 20px;
+  width: 65%;
+  font-family: "Poppins", sans-serif;
+  background-color: #303030;
+  font-size: 1.2rem;
+  color: white;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid white;
+  margin: 15% auto;
+  cursor: pointer;
+  -webkit-transition: 360ms ease-in-out;
+  transition: 360ms ease-in-out;
+}
+
+.index-content .navigation-section .info-navigation .info-btn:hover {
+  background-color: white;
+  color: black;
+  -webkit-animation: bounce 0.5s linear;
+          animation: bounce 0.5s linear;
+}
+
+.index-content .navigation-section .info-navigation .selected-btn {
+  background-color: white;
+  color: black;
+}
+
+.index-content .info-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #ffe0e0;
+  width: 80%;
+  height: 100vh;
+}
+
+.index-content .info-section .info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.index-content .info-section .info-container .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 90%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.index-content .info-section .info-container .info h1 {
+  width: 90%;
+  text-align: left;
+  padding: 20px;
+  font-size: 2.4rem;
+  margin-bottom: 2%;
+  border-bottom: 2px solid #ff4147;
+}
+
+.index-content .info-section .info-container .info img {
+  width: 300px;
+  margin-bottom: 5%;
+}
+
+.index-content .info-section .info-container .info p {
+  width: 95%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.index-content .info-section .info-container .next-btn {
+  width: 90%;
+  background-color: #ff4147;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 1%;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  -webkit-transition: 160ms ease-in-out;
+  transition: 160ms ease-in-out;
+  cursor: pointer;
+}
+
+.index-content .info-section .info-container .next-btn:hover {
+  background-color: #cc3439;
+}
+
 .top-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -107,7 +293,7 @@ html, body {
 }
 
 .top-container .top-navbar .search-pokemon #search-bar {
-  width: 60%;
+  width: 65%;
   height: 2rem;
   outline: none;
   padding: 20px;

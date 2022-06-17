@@ -4,11 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Pokedéx - Home</title>
 </head>
 <body>
-    <script src="./js/app.js"></script>
+    <header>
+        <section class="top-container">
+            <nav class="top-navbar">
+                <div class="search-pokemon">
+                    <a href="./index.html"><img src="./images/pokedex-logo.png" alt="Pokedéx Logo"></a>
+                    <input type="search" id="search-bar" placeholder="Search">
+                </div>
+                <div class="header-nav">
+                    <ul class="header-links">
+                        <a href="./index.html"><li>Home</li></a>
+                        <a href="./pokedexGrid.html"><li>Pokédex</li></a>
+                        <a href="#"><li>Support</li></a>
+                        <a href="#"><li>FAQ</li></a>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <main class="index-content">
+        <section class="navigation-section">
+            <div class="info-navigation">
+                <button class="info-btn selected-btn">Intro</button>
+                <button class="info-btn">History</button>
+                <button class="info-btn">Pokédex</button>
+            </div>
+        </section>
+        <section class="info-section">
+            <div class="info-container">
+                <div class="info info-intro" style="display: none;">
+                    <h1>Intro</h1>
+                    <img src="./images/pokemon-logo.png" alt="Official Pokemon Logo">
+                    <p> Pokémon — short for pocket monsters — is the name of a game (really several) involving creatures called “pokémon” and 
+                        “trainers”. <br></br>Within the narrative of the game, the pokémon trainer catches pokémon in little holding containers 
+                        (called “pokeballs”), and then uses those pokémon to fight other pokémon. On its surface, the fights have two reasons: 
+                        <br>1) to weaken and capture wild pokémon; <br>2) to defeat other pokémon trainers. <br></br>The pokémon themselves are various, 
+                        having different appearances, names, powers, potentials, weaknesses, and personalities. <br>The actual form of the game, 
+                        again, on its surface, takes several forms, having it's own card game, Gameboy versions, a Nintendo 64 version,
+                        many cartoons and movies, various toys, merchandise and artifacts.</p>
+                </div>
+                <div class="info info-history" style="display: none;">
+                    <h1>History</h1>
+                    <p> The franchise has its roots in a gaming magazine in the early 1980s in Japan—Game Freak, started by Satoshi Tajiri 
+                        and Ken Sugimori. Tajiri was the writer, while Sugimori was the illustrator. They soon realized that the arcade scene at 
+                        the time wasn’t too hot anymore and decided to develop games themselves. This included games that were published by Nintendo 
+                        on the NES and Game Boy like Yoshi and even games for SEGA like Magical Tarurūto-kun on the Mega Drive, SEGA’s console. 
+                        In its time as a developer, Game Freak had its titles published by the likes of even Sony back then. <br></br>When Tajiri and 
+                        Co. put forth the idea of Pokémon to Nintendo, though, the publishers didn’t really get it. However, Tajiri was given
+                        the benefit of doubt thanks to the success of Game Freak’s previous titles, and he worked under the mentorship of Shigeru 
+                        Miyamoto to create Pocket Monsters: Red and Green, a game that combined the collecting and trading of monsters. And 
+                        thus began a franchise that went on to become the second largest gaming franchise ever. (In case you are wondering, Mario 
+                        is the largest, and it also happens to be owned by Nintendo.) <br></br>26 February 1996 marks the debut of the Pokémon 
+                        franchise in the form of both those games on the Game Boy in Japan. At its heart, Pocket Monsters: Red and Green was a 
+                        very basic Japanese role-playing game. You play as a Pokémon trainer travelling the world and collecting the ubiquitous
+                        little monsters (inspired by Tajiri’s childhood love for insect collection) and training them in battles with other Pokémon.</p>
+                </div>
+                <div class="info info-pokedex">
+                    <h1>Pokédex</h1>
+                    <img src="./images/pokemon-game.webp" alt="Pokemon Game">
+                    <p> The goal of this project is to exhibit all of the Pokemon that exist so far (by using PokeAPI), as well as their most
+                        important informations. Click the button below to start!
+                    </p>
+                </div>
+                <button class="next-btn">Next</button>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
