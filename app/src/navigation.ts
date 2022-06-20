@@ -2,7 +2,7 @@ const navButtons = document.querySelectorAll(".info-btn");
 const infoIntro = document.querySelector(".info-intro") as unknown as HTMLDivElement;
 const infoHistory = document.querySelector(".info-history") as unknown as HTMLDivElement;
 const infoPokedex = document.querySelector(".info-pokedex") as unknown as HTMLDivElement;
-const nextBtn = document.querySelector(".next-btn");
+const nextBtn = document.querySelector(".next-btn")!;
 
 navButtons[0].addEventListener("click", () => {
     navigateToIntro();
@@ -34,6 +34,8 @@ function navigateToIntro() {
     infoIntro.style.display = "flex";
     infoHistory.style.display = "none";
     infoPokedex.style.display = "none";
+
+    nextBtn.textContent = "Next";
 }
 
 function navigateToHistory() {
@@ -44,6 +46,8 @@ function navigateToHistory() {
     infoIntro.style.display = "none";
     infoHistory.style.display = "flex";
     infoPokedex.style.display = "none";
+
+    nextBtn.textContent = "Next";
 }
 
 function navigateToPokedex() {
@@ -54,4 +58,6 @@ function navigateToPokedex() {
     infoIntro.style.display = "none";
     infoHistory.style.display = "none";
     infoPokedex.style.display = "flex";
+    
+    nextBtn.textContent = "Go!";
 }

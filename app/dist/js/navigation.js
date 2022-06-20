@@ -31,6 +31,7 @@ function navigateToIntro() {
     infoIntro.style.display = "flex";
     infoHistory.style.display = "none";
     infoPokedex.style.display = "none";
+    nextBtn.textContent = "Next";
 }
 function navigateToHistory() {
     navButtons[0].classList.remove("selected-btn");
@@ -39,6 +40,7 @@ function navigateToHistory() {
     infoIntro.style.display = "none";
     infoHistory.style.display = "flex";
     infoPokedex.style.display = "none";
+    nextBtn.textContent = "Next";
 }
 function navigateToPokedex() {
     navButtons[0].classList.remove("selected-btn");
@@ -47,4 +49,5 @@ function navigateToPokedex() {
     infoIntro.style.display = "none";
     infoHistory.style.display = "none";
     infoPokedex.style.display = "flex";
+    nextBtn.textContent = "Go!";
 }

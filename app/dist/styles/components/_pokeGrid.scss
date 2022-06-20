@@ -1,74 +1,5 @@
 @import "../abstract/variables";
 
-.top-container {
-    @include centered();
-    width: 100%;
-    .top-navbar {
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        background-color: $primaryColor;
-        .search-pokemon{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 50%;
-            a {
-                align-self: flex-start;
-                img {
-                    width: 150px;
-                }
-            }
-            #search-bar {
-                width: 65%;
-                height: 2rem;
-                outline: none;
-                padding: 20px;
-                border-radius: 10px;
-                border: none;
-                font-family: $mainFont;
-                background-image: url("../images/search.png");
-                background-repeat: no-repeat;
-                background-position: center right 10px;
-                transition: 360ms ease-in-out;
-                &:hover {
-                    background-color: rgb(238, 238, 238);
-                }
-            }
-        }
-        .header-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            width: 50%;
-            .header-links {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-evenly;
-                a {
-                    width: 20%;
-                    font-size: $textFontSize;
-                    text-decoration: none;
-                    color: white;
-                    transition: 240ms ease-in-out;
-                    &:hover {
-                        padding: 15px;
-                        border: 2px white;
-                        border-radius: 10px;
-                        background-color: white;
-                        color: $primaryColor;
-                    }
-                }
-            }
-        }
-    }
-}
-
 .pokemon-list {
     .pokemon-container {
         padding: 40px;
@@ -81,53 +12,89 @@
             padding-bottom: 2%;
         }
         .filter-container {
-            h2{
-                margin-bottom: 3%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 5%;
+            width: 100%;
+            .filter-amount {
+                @include centered();
+                width: 50%;
+                h2{
+                    text-align: left;
+                    margin-bottom: 5%;
+                }
+                .number-filter {
+                    @include centered();
+                    width: 100%;
+                    #error-message {
+                        color: red;
+                        font-size: 0.8rem;
+                        height: 1rem;
+                    }
+                    input {
+                        width: 30%;
+                        height: 2rem;
+                        outline: none;
+                        padding: 25px 15px 25px 10px;
+                        margin-right: 1%;
+                        margin-bottom: 5%;
+                        border: none;
+                        border-bottom: 1px solid black;
+                        font-family: $mainFont;
+                        transition: 240ms ease-in-out;
+                        &:hover, &:focus {
+                            background-color: rgb(228, 228, 228);
+                            border-radius: 10px;
+                        }
+                    }
+                    button {
+                        outline: none;
+                        width: 20%;
+                        border: 2px solid white;
+                        padding: 10px 20px;
+                        font-family: $mainFont;
+                        color: white;
+                        border-radius: 10px;
+                        background-color: $primaryColor;
+                        transition: 240ms ease-in-out;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: white;
+                            color: $primaryColor;
+                            border: 2px solid $primaryColor;
+                            transition: 240ms ease-in-out;
+                        }
+                    }
+                }
             }
-            #error-message {
-                color: red;
-                font-size: 0.8rem;
-                margin-bottom: 5%;
-            }
-            .filter-number {
-                width: 100%;
+            .filter-title {
                 display: flex;
-                margin-top: 1%;
-                margin-bottom: 5%;
+                align-items: center;
+                flex-direction: column;
+                width: 50%;
+                h2 {
+                    text-align: left;
+                    margin-bottom: 5%;
+                }
                 input {
-                    width: 10%;
+                    width: 80%;
                     height: 2rem;
                     outline: none;
-                    border-radius: 10px;
                     padding: 25px 15px 25px 10px;
                     border: none;
+                    border-bottom: 1px solid black;
                     font-family: $mainFont;
                     transition: 240ms ease-in-out;
                     &:hover, &:focus {
-                        background-color: rgb(228, 228, 228);
-                    }
-                }
-                button {
-                    outline: none;
-                    border: 2px solid white;
-                    padding: 10px 20px;
-                    font-family: $mainFont;
-                    color: white;
-                    border-radius: 10px;
-                    background-color: $primaryColor;
-                    transition: 240ms ease-in-out;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: white;
-                        color: $primaryColor;
-                        border: 2px solid $primaryColor;
-                        transition: 240ms ease-in-out;
+                        background-color: rgb(228, 228, 228);                       
+                        border-radius: 10px;
                     }
                 }
             }
-            h3 {
-                margin-bottom: 3%;
-            }
+        }
+        #amountDisplay {
+            margin-bottom: 5%;
         }
         #pokedex {
             padding-inline-start: 0;
@@ -160,6 +127,10 @@
     }
 }
 
+.invisible {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     html, body {
         font-size: 0.9rem;
@@ -168,25 +139,6 @@
     .top-container {
         .top-navbar {
             height: 15vh;
-            .search-pokemon{
-                a {
-                    img {
-                        width: 100px;
-                    }
-                }
-                #search-bar {
-                    width: 65%;
-                    padding: 15px;
-                    font-size: 0.7rem;
-                }
-            }
-            .header-nav {
-                .header-links {
-                    a {
-                        width: 25%;
-                    }
-                }
-            }
         }
     }
 
@@ -196,9 +148,20 @@
                 font-size: 2.5rem;
             }
             .filter-container {
-                .filter-number {
+                .filter-amount {
+                    .number-filter {
+                        input {
+                            width: 50%;
+                            font-size: 0.8rem;
+                        }
+                        button {
+                            width: 35%;
+                        }
+                    }
+                }
+                .filter-title {
                     input {
-                        width: 20%;
+                        width: 90%;
                         font-size: 0.8rem;
                     }
                 }
@@ -210,23 +173,34 @@
 @media screen and (max-width: 425px) {
     .top-container {
         .top-navbar {
-            flex-direction: column;
             padding: 25px;
-            height: 26vh;
-            .search-pokemon{
-                width: 100%;
-                #search-bar {
-                    padding: 20px;
-                    width: 65%;
-                }
-            }
+            height: 50vh;
             .header-nav {
                 width: 100%;
                 height: 5vh;
                 .header-links {
+                    flex-direction: column;
                     a {
+                        font-size: 1.2rem;
+                        margin-bottom: 5%;
+                        width: 70%;
                         &:hover {
                             padding: 10px;
+                        }
+                        &:nth-child(1) {
+                            order: 2;
+                        }
+                        &:nth-child(2) {
+                            order: 3;
+                        }
+                        &:nth-child(3) {
+                            order: 1;
+                        }
+                        &:nth-child(4) {
+                            order: 4;
+                        }
+                        &:nth-child(5) {
+                            order: 5;
                         }
                     }
                 }
@@ -237,9 +211,24 @@
     .pokemon-list {
         .pokemon-container {
             .filter-container {
-                .filter-number {
+                flex-direction: column;
+                margin-bottom: 15%;
+                .filter-amount {
+                    width: 100%;
+                    margin-bottom: 20%;
+                    .number-filter {
+                        input {
+                            width: 80%;
+                        }
+                        button {
+                            width: 80%;
+                        }
+                    }
+                }
+                .filter-title {
+                    width: 100%;
                     input {
-                        width: 100%;
+                        width: 80%;
                     }
                 }
             }
@@ -261,12 +250,6 @@
     .top-container {
         .top-navbar {
             padding: 20px;
-            .search-pokemon{
-                #search-bar {
-                    padding: 15px;
-                    width: 60%;
-                }
-            }
             .header-nav {
                 .header-links {
                     a {
@@ -286,8 +269,20 @@
                 margin-bottom: 10%;
             }
             .filter-container {
-                .filter-number {
-                    margin: 10% auto;
+                .filter-amount {
+                    .number-filter {
+                        input {
+                            width: 100%;
+                        }
+                        button {
+                            width: 100%;
+                        }
+                    }
+                }
+                .filter-title {
+                    input {
+                        width: 100%;
+                    }
                 }
             }
         }
