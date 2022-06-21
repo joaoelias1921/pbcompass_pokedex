@@ -7,6 +7,7 @@
 
 html, body {
   font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
 
 @-webkit-keyframes bounce {
@@ -547,6 +548,7 @@ html, body {
   padding: 40px;
   background-color: #f4f4f4;
   text-align: center;
+  cursor: pointer;
 }
 
 .pokemon-list .pokemon-container #pokedex .card .card-title {
@@ -613,9 +615,9 @@ html, body {
             flex-direction: column;
   }
   .top-container .top-navbar .header-nav .header-links a {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 5%;
-    width: 70%;
+    width: 90%;
   }
   .top-container .top-navbar .header-nav .header-links a:hover {
     padding: 10px;
@@ -696,6 +698,155 @@ html, body {
   }
   .pokemon-list .pokemon-container .filter-container .filter-title input {
     width: 100%;
+  }
+}
+
+.pokemon-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  background-color: #ffe0e0;
+  width: 100%;
+  height: 90vh;
+}
+
+.pokemon-details .backBtn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5%;
+  width: 30%;
+}
+
+.pokemon-details .backBtn-container a {
+  width: 100%;
+}
+
+.pokemon-details .backBtn-container a button {
+  width: 100%;
+  height: 3.5rem;
+  padding: 15px;
+  outline: none;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: white;
+  background-color: #ff4147;
+  cursor: pointer;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
+}
+
+.pokemon-details .backBtn-container a button:hover {
+  background-color: white;
+  border: 1px solid #ff4147;
+  border-left: 0;
+  color: #ff4147;
+}
+
+.pokemon-details .details-container {
+  width: 50%;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.pokemon-details .details-container .details-list {
+  margin-left: 10%;
+}
+
+.pokemon-details .details-container .details-list li {
+  list-style: none;
+  font-weight: bold;
+  text-align: left;
+  margin: 10% auto;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ff4147;
+  border-width: 10px;
+}
+
+.pokemon-details .details-container .details-list li span {
+  font-weight: 400;
+}
+
+.pokemon-details .details-container .details-list #pokemon-id {
+  font-size: 4rem;
+}
+
+.pokemon-details .pokemon-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 50%;
+}
+
+.pokemon-details .pokemon-image #image-container {
+  width: 100%;
+}
+
+.pokemon-details .pokemon-image #image-container img {
+  background-color: white;
+  border-radius: 300px;
+  width: 80%;
+}
+
+@media screen and (max-width: 425px) {
+  .pokemon-details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 120vh;
+  }
+  .pokemon-details .details-container {
+    width: 90%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .pokemon-details .details-container .details-list {
+    margin-left: 10%;
+  }
+  .pokemon-details .details-container .details-list li {
+    font-size: 1.3rem;
+  }
+  .pokemon-details .details-container .details-list #pokemon-id {
+    font-size: 4rem;
+  }
+  .pokemon-details .pokemon-image {
+    width: 100%;
+  }
+  .pokemon-details .pokemon-image #image-container {
+    margin: 5% auto;
+  }
+  .pokemon-details .pokemon-image #image-container img {
+    width: 60%;
   }
 }
 /*# sourceMappingURL=style.css.map */

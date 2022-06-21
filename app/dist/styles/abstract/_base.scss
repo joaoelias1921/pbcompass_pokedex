@@ -8,6 +8,7 @@
 
 html, body {
     font-family: $mainFont;
+    font-weight: $mainFontWeight;
 }
 
 @mixin centered() {

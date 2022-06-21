@@ -106,6 +106,7 @@
                 padding: 40px;
                 background-color: #f4f4f4;
                 text-align: center;
+                cursor: pointer;
                 .card-title {
                     text-transform: uppercase;
                     font-weight: normal;
@@ -181,9 +182,9 @@
                 .header-links {
                     flex-direction: column;
                     a {
-                        font-size: 1.2rem;
+                        font-size: 1.4rem;
                         margin-bottom: 5%;
-                        width: 70%;
+                        width: 90%;
                         &:hover {
                             padding: 10px;
                         }
