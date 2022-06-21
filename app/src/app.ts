@@ -18,7 +18,7 @@ function convertPokemonData(results: any[]) {
     const allPokemon = results.map(data => ({
         name: data.name,
         id: data.id,
-        image: data.sprites["front_default"],
+        image: data.sprites.other.home["front_default"],
         type: data.types.map((type: { type: { name: any; }; }) => type.type.name).join(", "),
     }));
     displayPokemon(allPokemon);
